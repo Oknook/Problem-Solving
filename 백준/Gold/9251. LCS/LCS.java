@@ -18,21 +18,6 @@ public class Main {
             }
         }
 
-        StringBuilder lcs = new StringBuilder();
-        int i = str1.length(), j = str2.length();
-
-        while (i > 0 && j > 0) {
-            if (str1.charAt(i - 1) == str2.charAt(j - 1)) {
-                lcs.append(str1.charAt(i - 1));
-                i--;
-                j--;
-            } else if (dp[i - 1][j] > dp[i][j - 1]) {
-                i--;
-            } else {
-                j--;
-            }
-        }
-
-        System.out.println(lcs.length());
+        System.out.println(dp[str1.length()][str2.length()]);
     }
 }
