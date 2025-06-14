@@ -14,10 +14,7 @@ class Solution {
         }
         al.sort(Comparator.comparingInt(a -> a[map.get(sort_by)]));
         
-        int[][] answer = new int[al.size()][4];
-        for (int i = 0; i < al.size(); i++) {
-            answer[i] = al.get(i);
-        }
+        int[][] answer = al.toArray(new int[al.size()][]);
         
         return answer;
     }
